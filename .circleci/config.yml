@@ -8,20 +8,36 @@ jobs:
       # Checkout the code from the branch into the working_directory
       - checkout
       - run:
+          name: Install front dependencies
           working_directory: ~/projet-buffa/front
           command: npm install
       - run:
+          name: Build front package
           working_directory: ~/projet-buffa/front
           command: npm run build:prod
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
+          # taken to be the root directory of the workspace.
+          root: .
+          # Must be relative path from root
+          paths:
+            - front/dist
+            - server
+
   move_front:
     working_directory: ~/projet-buffa
     docker:
       - image: circleci/node:10-browsers
     steps:
-      - checkout
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: .
       - run: ls -la
-      - run: rm -rfv back/public/*
       - run:
+          name: Clear back public directory
+          command: rm -rfv back/public/*
+      - run:
+
           working_directory: ~/projet-buffa
           command: mv front/dist/front/* back/public
   deploy:
