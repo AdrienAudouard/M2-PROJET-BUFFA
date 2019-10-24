@@ -55,7 +55,7 @@ jobs:
           at: .
       - run: git config --global user.email "adrien.audouard@gmail.com"
       - run: git config --global user.name "CircleCi"
-      - run: git add . && git commit -m "deploy"
+      - run: git add . && git commit -m "[skip ci] deploy build"
       - run: git subtree pull --prefix back https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
       - run:
           name: Deploy Master to Heroku
