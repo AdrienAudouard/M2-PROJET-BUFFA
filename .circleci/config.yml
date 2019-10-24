@@ -35,9 +35,10 @@ jobs:
       - run: ls -la
       - run:
           name: Clear back public directory
-          command: rm -rf back/public/*
+          command: rm -rf back/public
       - run:
-
+          command: mkdir back/public
+      - run:
           working_directory: ~/projet-buffa
           command: mv front/dist/front/* back/public
   deploy:
