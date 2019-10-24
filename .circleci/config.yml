@@ -1,12 +1,13 @@
 version: 2
 jobs:
   build:
+    working_directory: ~projet/front
     docker:
       - image: circleci/node:8-browsers
     steps:
       - checkout
-      - run: cd front & npm install
-      - run: cd front & npm run build:prod
+      - run: npm install
+      - run: npm run build:prod
 workflows:
   version: 2
   build:
