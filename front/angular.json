@@ -18,8 +18,8 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/front",
-            "baseHref" : "/foo/",
-            "deployUrl": "/foo/",
+            "baseHref" : "m2-projet-buffa.herokuapp.com/",
+            "deployUrl": "m2-projet-buffa.herokuapp.com/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
