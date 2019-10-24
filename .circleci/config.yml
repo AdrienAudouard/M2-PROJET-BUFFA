@@ -9,11 +9,11 @@ jobs:
       - checkout
       - run: ls -la
       - run:
-        working_directory: ~/projet-buffa/front
-        command: npm install
+          working_directory: ~/projet-buffa/front
+          command: npm install
       - run:
-        working_directory: ~/projet-buffa/front
-        command: npm run build:prod
+          working_directory: ~/projet-buffa/front
+          command: npm run build:prod
 workflows:
   version: 2
   build:
