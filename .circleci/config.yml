@@ -21,8 +21,7 @@ jobs:
           root: .
           # Must be relative path from root
           paths:
-            - front/dist
-            - back
+            - .
 
   move_front:
     working_directory: ~/projet-buffa
@@ -46,7 +45,7 @@ jobs:
           root: .
           # Must be relative path from root
           paths:
-            - back
+            - .
   deploy:
     working_directory: ~/projet-buffa
     docker:
