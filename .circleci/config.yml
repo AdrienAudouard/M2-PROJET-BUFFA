@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: circleci/node:8-browsers
     steps:
+      - run: pwd
       - run: cd front/
       - run: npm install
       - run: ng build --prod
