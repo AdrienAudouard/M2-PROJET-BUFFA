@@ -1,10 +1,12 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/projet-buffa/front
     docker:
-      - image: circleci/node:8-browsers
+      - image: circleci/node:10-browsers
     steps:
-      - run: ls -A1
+      # Checkout the code from the branch into the working_directory
+      - checkout
       - run: npm install
       - run: npm run build:prod
 workflows:
