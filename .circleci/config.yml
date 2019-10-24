@@ -22,7 +22,7 @@ jobs:
           # Must be relative path from root
           paths:
             - front/dist
-            - server
+            - back
 
   move_front:
     working_directory: ~/projet-buffa
