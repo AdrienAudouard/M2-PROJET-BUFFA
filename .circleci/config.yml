@@ -60,7 +60,7 @@ jobs:
       - run: git config --global user.name "CircleCi"
       - run: git add . && git commit -m "[skip ci] deploy build"
       - run: git remote -v
-      - run: git remote set-url heroku https://heroku:19e860f0-9c0d-4806-93c6-72e0afaab526@git.heroku.com/m2-projet-buffa.git
+      - run: git remote add heroku https://heroku:19e860f0-9c0d-4806-93c6-72e0afaab526@git.heroku.com/m2-projet-buffa.git
       - run:
           name: Deploy Master to Heroku
           command: git push heroku `git subtree split --prefix back master`:master --force
