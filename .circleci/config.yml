@@ -61,7 +61,7 @@ jobs:
       - run: git add . && git commit -m "[skip ci] deploy build"
       - run:
           name: Deploy Master to Heroku
-          command: git subtree push --prefix back https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+          command: git push heroku `git subtree split --prefix back master`:master --force
 
 workflows:
   version: 2
