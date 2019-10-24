@@ -30,7 +30,6 @@ jobs:
       - image: circleci/node:10-browsers
     steps:
       - attach_workspace:
-          # Must be absolute path or relative path from working_directory
           at: .
       - run: ls -la
       - run:
@@ -41,12 +40,21 @@ jobs:
       - run:
           working_directory: ~/projet-buffa
           command: mv front/dist/front/* back/public
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
+          # taken to be the root directory of the workspace.
+          root: .
+          # Must be relative path from root
+          paths:
+            - back
   deploy:
     working_directory: ~/projet-buffa
     docker:
       - image: buildpack-deps:trusty
     steps:
-      - checkout
+      - attach_workspace:
+          at: .
+      - run: git add . && git commit -m "deploy"
       - run:
           name: Deploy Master to Heroku
           command: git subtree push --prefix back https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
