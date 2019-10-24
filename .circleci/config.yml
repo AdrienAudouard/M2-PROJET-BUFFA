@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8-browsers
+    steps:
+      - run: cd front/
+      - run: npm install
+      - run: ng build --prod
+workflows:
+  build:
+    jobs:
+      - build
+    version: 2
