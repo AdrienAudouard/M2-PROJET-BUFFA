@@ -1,11 +1,10 @@
 version: 2
 jobs:
   build:
-    working_directory: ~project/front
     docker:
       - image: circleci/node:8-browsers
     steps:
-      - checkout
+      - run: ls -A1
       - run: npm install
       - run: npm run build:prod
 workflows:
