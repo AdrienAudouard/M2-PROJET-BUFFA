@@ -19,6 +19,7 @@ jobs:
       - image: circleci/node:10-browsers
     steps:
       - checkout
+      - run: pwd
       - run: rm -rfv back/public/*
       - run: mv front/dist/front/* back/public
   deploy:
