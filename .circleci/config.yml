@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    wroking_directory: ~/front
+    working_directory: ~/front
     docker:
       - image: circleci/node:8-browsers
     steps:
