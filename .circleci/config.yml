@@ -53,6 +53,8 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+      - run: git config --global user.email "adrien.audouard@gmail.com"
+      - run: git config --global user.name "CircleCi"
       - run: git add . && git commit -m "deploy"
       - run:
           name: Deploy Master to Heroku
