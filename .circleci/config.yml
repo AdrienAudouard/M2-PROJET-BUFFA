@@ -19,9 +19,11 @@ jobs:
       - image: circleci/node:10-browsers
     steps:
       - checkout
-      - run: pwd
+      - run: ls -la
       - run: rm -rfv back/public/*
-      - run: mv front/dist/front/* back/public
+      - run:
+          working_directory: ~/projet-buffa
+          command: mv front/dist/front/* back/public
   deploy:
     working_directory: ~/projet-buffa
     docker:
