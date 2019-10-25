@@ -11,11 +11,11 @@ export class ArtisteServiceService {
 
   constructor(private http: HttpClient) {
   }
-  getArtistField(): Observable<any> {
+  getArtistField(name: string): Observable<any> {
     // const requestOptions: Object = {
     //   responseType: 'text'
     // }
-    return this.http.get<any>(environment.api);
+    return this.http.get(`${environment.api}/search/artist/${name}`);
   }
 
 }

@@ -9,21 +9,20 @@ import { ArtisteServiceService } from "./../services/artiste-service.service"
 })
 export class ArtistDetailsComponent implements OnInit {
   name = '';
-  artistData;
-
+  artistData = {};
 
   constructor(private route: ActivatedRoute, private artisteService: ArtisteServiceService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.name = params['name'];
+      this.getArtist();
     });
-    this.artisteService.getArtistField().subscribe(data => {
-      console.log("data" + data);
-      this.artistData = data;
-      console.log("Tab artist" + this.artistData);
-    });
-
   }
-
+  getArtist() {
+    this.artisteService.getArtistField(this.name).subscribe(data => {
+      this.artistData = data;
+      console.log(this.artistData);
+    });
+  }
 }
