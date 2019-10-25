@@ -1,0 +1,87 @@
+version: 2
+jobs:
+  build_front:
+    working_directory: ~/projet-buffa
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      # Checkout the code from the branch into the working_directory
+      - checkout
+      - run:
+          name: Install front dependencies
+          working_directory: ~/projet-buffa/front
+          command: npm install
+      - run:
+          name: Build front package
+          working_directory: ~/projet-buffa/front
+          command: npm run build:prod
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
+          # taken to be the root directory of the workspace.
+          root: .
+          # Must be relative path from root
+          paths:
+            - .
+
+  move_front:
+    working_directory: ~/projet-buffa
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - attach_workspace:
+          at: .
+      - run: ls -la
+      - run:
+          name: Clear back public directory
+          command: rm -rf back/public
+      - run:
+          command: mkdir back/public
+      - run:
+          working_directory: ~/projet-buffa
+          command: mv front/dist/front/* back/public
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
+          # taken to be the root directory of the workspace.
+          root: .
+          # Must be relative path from root
+          paths:
+            - .
+  deploy:
+    working_directory: ~/projet-buffa
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - attach_workspace:
+          at: .
+      - add_ssh_keys:
+          fingerprints:
+            - "16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48"
+      - run: git config --global user.email "adrien.audouard@gmail.com"
+      - run: git config --global user.name "CircleCi"
+      - run: git add . && git commit -m "[skip ci] deploy build"
+      - run: git remote -v
+      - run: git remote add heroku https://heroku:19e860f0-9c0d-4806-93c6-72e0afaab526@git.heroku.com/m2-projet-buffa.git
+      - run:
+          name: Deploy Master to Heroku
+          command: git push heroku `git subtree split --prefix back master`:master --force
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build_front:
+          filters:
+            branches:
+              only: master
+      - move_front:
+          requires:
+            - build_front
+          filters:
+            branches:
+              only: master
+      - deploy:
+          requires:
+            - move_front
+          filters:
+            branches:
+              only: master
