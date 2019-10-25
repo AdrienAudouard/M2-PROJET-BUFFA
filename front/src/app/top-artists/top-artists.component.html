@@ -1,1 +1,19 @@
-<p>top-artists works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Artist with the most albums</h5>
+          <ngx-charts-gauge
+            [results]="topAlbumDatas"
+            [legend]="true"
+            [animations]="true"
+            [view]="[700, 400]"
+            [scheme]="topAlbumColorScheme"
+          >
+          </ngx-charts-gauge>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

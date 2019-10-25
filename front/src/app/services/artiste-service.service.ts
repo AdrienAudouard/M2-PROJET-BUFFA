@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from './../../environments/environment';
 import {Observable, of} from 'rxjs';
 import {RawSearchResponse} from '../models/RawSearchResponse';
-import {map} from 'rxjs/operators';
+import {RawCountResponse} from "../models/RawCountResponse";
 
 
 @Injectable({
@@ -26,5 +26,9 @@ export class ArtisteServiceService {
     }
 
     return this.http.get<RawSearchResponse[]>(`${environment.api}/search/fulltext/${searchtext}`);
+  }
+
+  getTopArtist(): Observable<RawCountResponse[]> {
+    return this.http.get<RawCountResponse[]>(`${environment.api}/api/v1/artist/count/album?limit=10`);
   }
 }

@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
 import { TopArtistsComponent } from './top-artists/top-artists.component';
 import {RouterModule} from '@angular/router';
+import {NgxChartsModule} from "@swimlane/ngx-charts";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { CompareArtistsComponent } from './compare-artists/compare-artists.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,7 @@ import {RouterModule} from '@angular/router';
     HomeComponent,
     NavbarComponent,
     TopArtistsComponent,
+    CompareArtistsComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,9 @@ import {RouterModule} from '@angular/router';
     FormsModule,
     RouterModule,
     HttpClientModule,
-    NgbTypeaheadModule
+    NgbTypeaheadModule,
+    NgxChartsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

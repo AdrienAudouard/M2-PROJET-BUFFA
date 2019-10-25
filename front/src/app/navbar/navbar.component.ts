@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
   links = [
     { name: 'Home', path: '/home'},
     { name: 'Top artists', path: '/top-artists'},
+    { name: 'Compare two artists', path: '/compare-artists'},
   ];
 
   constructor(
@@ -27,7 +28,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onSelectedItem(item: RawSearchResponse) {
-    this._router.navigate(['/artist', item.name]);
+    this._router.navigate(['/artist', item]);
     console.log(item);
   }
 
