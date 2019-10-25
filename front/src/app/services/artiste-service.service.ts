@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from './../../environments/environment'
-import { Observable } from 'rxjs';
+import { environment } from './../../environments/environment';
+import {Observable, of} from 'rxjs';
+import {RawSearchResponse} from '../models/RawSearchResponse';
+import {map} from 'rxjs/operators';
 
 
 @Injectable({
@@ -18,4 +20,11 @@ export class ArtisteServiceService {
     return this.http.get<any>(environment.api);
   }
 
+  searchArtist(searchtext: string): Observable<RawSearchResponse[]> {
+    if (searchtext === '') {
+      return of([]);
+    }
+
+    return this.http.get<RawSearchResponse[]>(`${environment.api}/search/fulltext/${searchtext}`);
+  }
 }

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {ArtisteServiceService} from '../services/artiste-service.service';
+import {Observable, of} from 'rxjs';
+import {debounceTime, distinctUntilChanged, switchAll, switchMap} from 'rxjs/operators';
+import {RawSearchResponse} from '../models/RawSearchResponse';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,20 +11,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  private _searchText = '';
+  links = [
+    { name: 'Home', path: '/home'},
+    { name: 'Top artists', path: '/top-artists'},
+  ];
 
-  constructor() { }
+  constructor(
+    private _artistServices: ArtisteServiceService,
+    private _router: Router,
+  ) {
+    this.search = this.search.bind(this);
+  }
 
   ngOnInit() {
   }
 
-  get searchText(): string {
-    return this._searchText;
+  onSelectedItem(item: RawSearchResponse) {
+    this._router.navigate(['/artist', item.name]);
+    console.log(item);
   }
 
-  set searchText(value: string) {
-    this._searchText = value;
-    console.log(value);
+  search($text: Observable<string>) {
+    return $text.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      switchMap((text) => this._artistServices.searchArtist(text))
+      );
   }
-
 }
