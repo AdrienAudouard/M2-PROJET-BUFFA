@@ -1,2 +1,11 @@
 <p>artist-details works!</p>
 <p> Artist name: {{name}} </p>
+
+<div>
+    <ul>
+        <li *ngFor="let artist of artistData ">
+            <span>{{artist.name}}</span>
+            <span>{{artist._id}}</span>
+        </li>
+    </ul>
+</div>

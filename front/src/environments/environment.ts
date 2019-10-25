@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'https://wasabi.i3s.unice.fr/'
+  api: 'https://wasabi.i3s.unice.fr/search/artist/A'
 };
 
 /*
