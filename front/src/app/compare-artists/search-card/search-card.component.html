@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-header">
+    {{ title }}
+    <button *ngIf="artist !== null" (click)="onDelete()" class="remove-button"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
+  </div>
+  <div class="card-body">
+    <app-search placeholder="Search" *ngIf="artist === null" (onItemSelected)="onArtistSelected($event)"></app-search>
+    <div class="container" *ngIf="artist !== null">
+      <div class="row">
+        <div class="col-4">
+          <img [src]="artist.image(imageSize.MEDIUM)" class="mr-1 rounded-circle artist-image">
+        </div>
+        <div class="col-8">
+          <p>{{ artist.name }}</p>
+          <p> {{ artist.locationString }} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

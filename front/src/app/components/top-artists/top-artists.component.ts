@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, ActivatedRouteSnapshot} from '@angular/router';
-import {RawCountResponse} from '../models/RawCountResponse';
+import {RawCountResponse} from '../../models/raw-count-response';
 
 @Component({
   selector: 'app-top-artists',

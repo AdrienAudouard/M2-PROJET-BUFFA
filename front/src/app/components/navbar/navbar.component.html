@@ -11,21 +11,8 @@
         <a class="nav-link" [routerLink]="[link.path]" routerLinkActive="active">{{ link.name }}<span class="sr-only">(current)</span></a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2"
-             name="search"
-             (selectItem)="onSelectedItem($event.item)"
-             type="search"
-             [ngbTypeahead]="search"
-             placeholder="Search"
-             aria-label="Search"
-             [resultTemplate]="rt"
-      />
-    </form>
+    <app-search (onItemSelected)="onSelectedItem($event)">
+
+    </app-search>
   </div>
 </nav>
-
-<ng-template #rt let-r="result" let-t="term">
-  <img [src]="r.picture" class="mr-1" style="width: 16px">
-  <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
-</ng-template>

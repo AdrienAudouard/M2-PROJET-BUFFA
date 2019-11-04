@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {ArtistDetailsComponent} from './artist-details/artist-details.component';
-import {HomeComponent} from './home/home.component';
-import {TopArtistsComponent} from './top-artists/top-artists.component';
+import {ArtistDetailsComponent} from './components/artist-details/artist-details.component';
+import {HomeComponent} from './components/home/home.component';
+import {TopArtistsComponent} from './components/top-artists/top-artists.component';
 import {TopAlbumResolver} from './resolver/top-album-resolver';
-import {CompareArtistsComponent} from './compare-artists/compare-artists.component';
+import {CompareArtistsComponent} from './compare-artists/compare-artists/compare-artists.component';
 
 const routes: Routes = [
   { path: 'artist/:name', component: ArtistDetailsComponent },

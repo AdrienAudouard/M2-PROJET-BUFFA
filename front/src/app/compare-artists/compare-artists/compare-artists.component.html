@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row m-3">
+    <div class="card col-12">
+      <div class="card-body">
+        <h5 class="card-title text-center">Select the artists</h5>
+        <div class="container-fluid">
+          <div class="row">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4" *ngFor="let i of cardCount; let index = index">
+              <app-search-card (onArtistDeleted)="onArtistDeleted($event)"
+                               (onArtistLoaded)="onNewArtistLoaded($event, index)"
+                               [artist]="i.artist"
+                               [title]="'Artiste ' + (index + 1)" >
+
+              </app-search-card>
+            </div>
+            <div class="col-2">
+              <button type="button" class="btn btn-primary" [disabled]="cardCount.length >= 5" (click)="addAddCard()">+</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-card title="Time Line">
+    <div id="timeline">
+    </div>
+  </app-card>
+
+  <app-card title="Ages">
+    <ngx-charts-bar-vertical
+      [results]="ageDatas"
+      [legend]="true"
+      [animations]="false"
+      [xAxis]="false"
+      [yAxis]="false"
+      [view]="view">
+    </ngx-charts-bar-vertical>
+  </app-card>
+</div>

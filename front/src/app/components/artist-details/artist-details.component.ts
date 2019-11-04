@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { ArtisteServiceService } from "./../services/artiste-service.service"
+import { ArtisteService } from "../../shared/services/artiste.service"
 
 @Component({
   selector: 'app-artist-details',
@@ -12,7 +12,7 @@ export class ArtistDetailsComponent implements OnInit {
   artistData;
 
 
-  constructor(private route: ActivatedRoute, private artisteService: ArtisteServiceService) { }
+  constructor(private route: ActivatedRoute, private artisteService: ArtisteService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
