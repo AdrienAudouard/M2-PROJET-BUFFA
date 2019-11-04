@@ -1,11 +1,111 @@
-<p>artist-details works!</p>
-<p> Artist name: {{name}} </p>
+<section class="artist-area">
+    <div>
+        <div>
+            <!-- Slide Img -->
+            <div class="div-img-artist">
+                <img alt="Artist's picture" id="img_artist">
+                <!--src="{{artistData.picture.medium}}"-->
+            </div>
+            <!-- Slide Content text -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-slides-content text-center">
+                            <h2> Colorlib Music
+                                <span>{{artistData.name}}</span></h2>
+                            <a href="#" class="btn-discover">Discover</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<div>
-    <ul>
-        <li *ngFor="let artist of artistData ">
-            <span>{{artist.name}}</span>
-            <span>{{artist._id}}</span>
-        </li>
-    </ul>
-</div>
+<section class="latest-albums-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading style-2">
+                    <h2>Latest Albums</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="albums-slideshow owl-carousel owl-loaded owl-drag">
+                    <div class="owl-stage-outer">
+                        <div class="page-album">
+                            <div class="list-album">
+                                <div class="single-album">
+                                    <div class="album-info" *ngFor="let key of objectKeys(albumData)">
+                                        <img alt=""> <!-- src="{{albumData[key].cover.medium}}"-->
+                                        <a href="#">
+                                            <h5>{{albumData[key].title}}</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="owl-nav">
+                        <div class="owl-prev"><i class="fa fa-angle-double-left"></i></div>
+                        <div class="owl-next"><i class="fa fa-angle-double-right"></i></div>
+                    </div>
+                    <div class="owl-dots disabled"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <!-- ***** Weeks Top ***** -->
+            <div class="col-12 col-lg-4">
+                <div class="content-footer-area">
+                    <div section-heading text-left mb-50 wow fadeInUp>
+                        <h2>This week’s top</h2>
+                    </div>
+                    <!-- Single Top Item -->
+                    <div>
+                        <!-- <div>
+                                <img src="" alt="">
+                            </div> -->
+                        <h6>Adrien Audouard</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ***** New Hits Songs ***** -->
+            <div class="col-12 col-lg-4">
+                <div class="content-footer-area">
+                    <div>
+                        <h2>Lastest Albums</h2>
+                    </div>
+                    <!-- Single Top Item -->
+                    <div>
+                        <div>
+                            <h6>Adrien Audouard</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ***** Popular Artists ***** -->
+            <div class="col-12 col-lg-4">
+                <div class="content-footer-area">
+                    <div>
+                        <h2>Popular Artist</h2>
+                    </div>
+                    <!-- Single Artist -->
+                    <div>
+                        <!-- <div>
+                                <img src="" alt="">
+                            </div> -->
+                        <h6>Adrien Audouard</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
