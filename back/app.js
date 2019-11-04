@@ -11,4 +11,4 @@ app.get('*', (req, res) => {
   res.sendFile(`${__dirname}/public/index.html`);
 });
 
-console.log(`Magic happens at http://localhost: ${port}`);
+console.log(`Magic happens at http://localhost:${port}`);
