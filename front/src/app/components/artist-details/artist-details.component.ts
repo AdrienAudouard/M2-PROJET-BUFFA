@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import {ArtisteService} from '../../shared/services/artiste.service';
 import {ArtistDocumentAdapter} from '../../models/artist-document-adapter';
+import * as Enum from '../../models/enums/image-size';
 
 @Component({
     selector: 'app-artist-details',
@@ -13,6 +14,7 @@ export class ArtistDetailsComponent implements OnInit {
     name = '';
     artistData: ArtistDocumentAdapter;
     objectKeys = Object.keys;
+    imageSize = Enum.ImageSize;
 
     constructor(private route: ActivatedRoute, private artisteService: ArtisteService) { }
     ngOnInit() {

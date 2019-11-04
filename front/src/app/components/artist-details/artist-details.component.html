@@ -39,7 +39,7 @@
                             <div class="list-album">
                                 <div class="single-album">
                                     <div class="album-info" *ngFor="let key of artistData.albums">
-                                        <img alt=""> <!-- src="{{albumData[key].cover.medium}}"-->
+                                        <img alt="" [src]="key.image(imageSize.MEDIUM)"> <!-- src="{{albumData[key].cover.medium}}"-->
                                         <a href="#">
                                             <h5>{{key.title}}</h5>
                                         </a>
@@ -65,7 +65,7 @@
             <!-- ***** Weeks Top ***** -->
             <div class="col-12 col-lg-4">
                 <div class="content-footer-area">
-                    <div section-heading text-left mb-50 wow fadeInUp>
+                    <div class="section-heading text-left mb-50 wow fadeInUp">
                         <h2>This week’s top</h2>
                     </div>
                     <!-- Single Top Item -->
