@@ -1,0 +1,83 @@
+.content-footer-area{
+    padding: 45px 30px;
+    border: 1px solid #d8d8d8;
+    background-color: #f5f9fa;
+}
+.artist-area{
+    background-image: url('./../../assets/background-artist.jpg');
+    -webkit-animation: slide 12s linear infinite;
+    animation: slide 12s linear infinite;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+}
+#img_artist {
+    border-radius: 100%;
+    border: 1px solid white ;
+}
+.div-img-artist{
+    text-align: center;
+    padding-top: 50px;
+}
+.btn-discover {
+    position: relative;
+    display: inline-block;
+    min-width: 212px;
+    color: rgb(255, 255, 255);
+    border: 1px solid white;
+    padding: 0 30px;
+    font-size: 16px;
+    line-height: 47px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 50px 0 50px 0;
+    text-decoration: none;
+    &:hover {
+        -webkit-transition-duration: 500ms;
+        transition-duration: 700ms;
+        background-color: white;
+        color: black;    }
+}
+.hero-slides-content.text-center h2{
+    color: #ffffff;
+}
+.section-heading.style-2 h2 {
+    font-size: 25px;
+}
+.section-heading h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    margin-bottom: 0;
+}
+.section-heading {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 100px;
+    text-align: center;
+}
+.single-album{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    
+}
+.album-info{
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+    margin: 5px;
+    //overflow-y: hidden;
+}
+h2{
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-family: "Archivo Narrow", sans-serif;
+    color: black;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
