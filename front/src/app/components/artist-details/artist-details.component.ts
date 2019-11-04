@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import {ArtisteServiceService} from '../../services/artiste-service.service';
+import {ArtisteService} from '../../shared/services/artiste.service';
+import {ArtistDocumentAdapter} from '../../models/artist-document-adapter';
 
 @Component({
     selector: 'app-artist-details',
@@ -10,11 +11,10 @@ import {ArtisteServiceService} from '../../services/artiste-service.service';
 
 export class ArtistDetailsComponent implements OnInit {
     name = '';
-    artistData = {};
-    albumData = {};
+    artistData: ArtistDocumentAdapter;
     objectKeys = Object.keys;
 
-    constructor(private route: ActivatedRoute, private artisteService: ArtisteServiceService) { }
+    constructor(private route: ActivatedRoute, private artisteService: ArtisteService) { }
     ngOnInit() {
         this.route.params.subscribe(params => {
             this.name = params['name'];
@@ -22,11 +22,9 @@ export class ArtistDetailsComponent implements OnInit {
         });
     }
     getArtist() {
-        this.artisteService.getArtistField(this.name).subscribe(data => {
+        this.artisteService.getArtistDocument(this.name).subscribe(data => {
             this.artistData = data;
             console.log(this.artistData);
-            this.albumData = data.albums;
-            console.log(this.albumData);
         });
     }
 }

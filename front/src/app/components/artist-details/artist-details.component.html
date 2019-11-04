@@ -38,10 +38,10 @@
                         <div class="page-album">
                             <div class="list-album">
                                 <div class="single-album">
-                                    <div class="album-info" *ngFor="let key of objectKeys(albumData)">
+                                    <div class="album-info" *ngFor="let key of artistData.albums">
                                         <img alt=""> <!-- src="{{albumData[key].cover.medium}}"-->
                                         <a href="#">
-                                            <h5>{{albumData[key].title}}</h5>
+                                            <h5>{{key.title}}</h5>
                                         </a>
                                     </div>
                                 </div>
