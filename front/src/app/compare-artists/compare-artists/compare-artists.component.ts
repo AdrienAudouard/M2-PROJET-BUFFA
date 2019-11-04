@@ -109,13 +109,13 @@ export class CompareArtistsComponent implements OnInit, AfterViewInit {
     chart.fontSize = 10;
     chart.tooltipContainer.fontSize = 10;
 
-    const categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+    const categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis() as any);
     categoryAxis.dataFields.category = 'category';
     categoryAxis.renderer.grid.template.disabled = true;
     categoryAxis.renderer.labels.template.paddingRight = 25;
     categoryAxis.renderer.minGridDistance = 10;
 
-    let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+    let dateAxis = chart.xAxes.push(new am4charts.DateAxis() as any);
     dateAxis.renderer.minGridDistance = 70;
     dateAxis.renderer.tooltipLocation = 0;
     dateAxis.renderer.line.strokeDasharray = '1,4';

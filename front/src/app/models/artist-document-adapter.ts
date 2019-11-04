@@ -1,7 +1,6 @@
 import {RawArtistDocumentResponse} from './raw-artist-document-response';
 import {SocialNetworkType} from './enums/social-network-type';
 import {ImageSize} from './enums/image-size';
-import {RawAlbum} from './raw-album';
 import {AlbumAdapter} from './album-adapter';
 
 export class ArtistDocumentAdapter {
@@ -77,9 +76,9 @@ export class ArtistDocumentAdapter {
       return actualYear - parseInt(beginYear, 10);
     }
 
-    const endyear = lifeSpan.end.split('-')[0];
+    const endYear = lifeSpan.end.split('-')[0];
 
-    return parseInt(endyear, 10) - parseInt(beginYear, 10);
+    return parseInt(endYear, 10) - parseInt(beginYear, 10);
   }
 
   get locationString(): string {
