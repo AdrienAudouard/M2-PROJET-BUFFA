@@ -1,15 +1,22 @@
-<div class="row m-1">
+<div class="row">
   <div class="col-12">
-    <div class="card shadow-sm">
-      <div class="card-header">
-        <h5 class="card-title text-center">
-          {{title}}
-        </h5>
-        <a class="btn btn-primary" data-toggle="collapse" [href]="'#' + contentID" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">hide</a>
-      </div>
-      <div class="card-body collapse show" [id]="contentID">
-        <ng-content></ng-content>
-      </div>
-    </div>
+    <h1>{{ title }}</h1>
+    <ng-content></ng-content>
   </div>
 </div>
+
+<!--<div class="row m-1">-->
+<!--  <div class="col-12">-->
+<!--    <div class="card shadow-sm">-->
+<!--      <div class="card-header">-->
+<!--        <h5 class="card-title text-center">-->
+<!--          {{title}}-->
+<!--        </h5>-->
+<!--        <a class="btn btn-primary" data-toggle="collapse" [href]="'#' + contentID" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">hide</a>-->
+<!--      </div>-->
+<!--      <div class="card-body collapse show" [id]="contentID">-->
+<!--        -->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
