@@ -14,6 +14,7 @@ import {HomeComponent} from './components/home/home.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {TopArtistsComponent} from './components/top-artists/top-artists.component';
 import {ArtistDetailsComponent} from './components/artist-details/artist-details.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {ArtistDetailsComponent} from './components/artist-details/artist-details
     HomeComponent,
     NavbarComponent,
     TopArtistsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

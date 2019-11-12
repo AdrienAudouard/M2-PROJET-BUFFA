@@ -4,10 +4,12 @@ import {SearchComponent} from './search/search.component';
 import {NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
 import {ArtisteService} from './services/artiste.service';
 import {DateTimeService} from './services/date-time.service';
+import { ParallaxDirective } from './directives/parallax.directive';
 
 @NgModule({
   declarations: [
-    SearchComponent
+    SearchComponent,
+    ParallaxDirective
   ],
   imports: [
     CommonModule,
@@ -19,6 +21,7 @@ import {DateTimeService} from './services/date-time.service';
   ],
   exports: [
     SearchComponent,
+    ParallaxDirective,
   ]
 })
 export class SharedModule { }

@@ -19,5 +19,6 @@ export interface RawArtistDocumentResponse {
   readonly gender: string;
   readonly picture: RawPicture;
   readonly albums: RawAlbum[];
+  readonly deezerFans: number;
   readonly locationString: string;
 }

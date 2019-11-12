@@ -82,7 +82,7 @@ export class ArtistDocumentAdapter {
   }
 
   get locationString(): string {
-    return this.rawArtistDocumentresponse.locationInfo.join(', ');
+    return this.rawArtistDocumentresponse.locationInfo.reverse().join(', ');
   }
 
   get birthdate(): string {
@@ -95,6 +95,10 @@ export class ArtistDocumentAdapter {
 
   get socialNetworksLinks(): Map<SocialNetworkType, string> {
     return this._socialNetworksLinks;
+  }
+
+  get deezerFans(): number {
+    return this.rawArtistDocumentresponse.deezerFans;
   }
 
   getRandomColor(): string {

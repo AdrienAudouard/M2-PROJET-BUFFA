@@ -23,19 +23,34 @@
       </div>
     </div>
   </div>
-  <app-card title="Time Line">
-    <div id="timeline">
-    </div>
-  </app-card>
 
-  <app-card title="Ages">
-    <ngx-charts-bar-vertical
-      [results]="ageDatas"
-      [legend]="true"
-      [animations]="false"
-      [xAxis]="false"
-      [yAxis]="false"
-      [view]="view">
-    </ngx-charts-bar-vertical>
-  </app-card>
+  <ng-container *ngIf="hasDatas">
+    <app-card id="timeline-card" title="Time Line" appParallax ratio="1">
+      <app-timeline [data]="timelineData"></app-timeline>
+    </app-card>
+
+    <app-card id="ages-card" title="Ages" appParallax ratio="1">
+      <ngx-charts-bar-vertical
+        [results]="ageDatas"
+        [legend]="true"
+        [animations]="false"
+        showDataLabel="true"
+        [xAxis]="false"
+        [yAxis]="false"
+        yScaleMax="100"
+        yScaleMin="0"
+        [view]="view">
+      </ngx-charts-bar-vertical>
+    </app-card>
+
+    <app-card id="deezer-fans-card" title="Deezer Fans" appParallax ratio="1">
+      <app-deezer-fans-chart [data]="deezerFansDatas"></app-deezer-fans-chart>
+    </app-card>
+
+    <app-card title="Number of albums">
+      <app-bullets-bar-chart [data]="barChartData"></app-bullets-bar-chart>
+    </app-card>
+  </ng-container>
+
+  <p *ngIf="!hasDatas" class="text-center">Please select at least one artist !</p>
 </div>
