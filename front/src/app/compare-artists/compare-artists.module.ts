@@ -9,6 +9,7 @@ import { CardComponent } from './card/card.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { DeezerFansChartComponent } from './deezer-fans-chart/deezer-fans-chart.component';
 import { BulletsBarChartComponent } from './bullets-bar-chart/bullets-bar-chart.component';
+import { SunburstChartComponent } from './sunburst-chart/sunburst-chart.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BulletsBarChartComponent } from './bullets-bar-chart/bullets-bar-chart.
     CardComponent,
     TimelineComponent,
     DeezerFansChartComponent,
-    BulletsBarChartComponent
+    BulletsBarChartComponent,
+    SunburstChartComponent
   ],
   imports: [
     CommonModule,

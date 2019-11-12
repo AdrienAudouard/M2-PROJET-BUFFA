@@ -8,7 +8,7 @@
     <div class="container" *ngIf="artist !== null">
       <div class="row">
         <div class="col-4">
-          <img [src]="artist.image(imageSize.MEDIUM)" class="mr-1 rounded-circle artist-image">
+          <img [alt]="artist.name" [src]="artist.image(imageSize.MEDIUM)" class="mr-1 rounded-circle artist-image">
         </div>
         <div class="col-8">
           <p>{{ artist.name }}</p>

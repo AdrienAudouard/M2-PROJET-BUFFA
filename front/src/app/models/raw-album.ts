@@ -1,4 +1,5 @@
 import {RawPicture} from './raw-picture';
+import {RawSong} from './raw-song';
 
 export interface RawAlbum {
   name: string;
@@ -7,4 +8,5 @@ export interface RawAlbum {
   length: string;
   cover: RawPicture;
   dateRelease: string;
+  songs: RawSong[];
 }

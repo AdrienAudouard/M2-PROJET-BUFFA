@@ -25,11 +25,11 @@
   </div>
 
   <ng-container *ngIf="hasDatas">
-    <app-card id="timeline-card" title="Time Line" appParallax ratio="1">
+    <app-card id="timeline-card" title="Time Line">
       <app-timeline [data]="timelineData"></app-timeline>
     </app-card>
 
-    <app-card id="ages-card" title="Ages" appParallax ratio="1">
+    <app-card id="ages-card" title="Ages">
       <ngx-charts-bar-vertical
         [results]="ageDatas"
         [legend]="true"
@@ -43,12 +43,16 @@
       </ngx-charts-bar-vertical>
     </app-card>
 
-    <app-card id="deezer-fans-card" title="Deezer Fans" appParallax ratio="1">
+    <app-card id="deezer-fans-card" title="Deezer Fans">
       <app-deezer-fans-chart [data]="deezerFansDatas"></app-deezer-fans-chart>
     </app-card>
 
     <app-card title="Number of albums">
       <app-bullets-bar-chart [data]="barChartData"></app-bullets-bar-chart>
+    </app-card>
+
+    <app-card title="Number of songs">
+      <app-sunburst-chart [data]="sunburstData" ></app-sunburst-chart>
     </app-card>
   </ng-container>
 

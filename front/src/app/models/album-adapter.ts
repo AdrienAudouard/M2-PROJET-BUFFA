@@ -16,6 +16,10 @@ export class AlbumAdapter {
     return this.rawAlbum.cover[size];
   }
 
+  get songsCount(): number {
+    return this.rawAlbum.songs.length;
+  }
+
   get releaseDate(): string {
     console.log(this.rawAlbum);
     const date = this.rawAlbum.dateRelease;

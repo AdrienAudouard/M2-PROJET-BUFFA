@@ -5,6 +5,7 @@ import {ImageSize} from '../../models/enums/image-size';
 import {DateTimeService} from '../../shared/services/date-time.service';
 import {AlbumAdapter} from '../../models/album-adapter';
 import {BulletBarChartData} from '../bullets-bar-chart/model/bullet-bar-chart-data';
+import {SunburstData} from '../sunburst-chart/models/sunburst-data';
 
 @Component({
   selector: 'app-compare-artists',
@@ -19,6 +20,7 @@ export class CompareArtistsComponent implements OnInit {
   timelineData: any[] = [];
   deezerFansDatas: ChartData[] = [];
   barChartData: BulletBarChartData[] = [];
+  sunburstData: SunburstData[] = [];
 
   constructor(private _dtService: DateTimeService) {
     this.view = [innerWidth / 2, 200];
@@ -49,6 +51,7 @@ export class CompareArtistsComponent implements OnInit {
     this.updateTimelineData();
     this.updateDeezerFansDatas();
     this.updateBarChatData();
+    this.updateSunburstData();
   }
 
   updateBarChatData() {
@@ -96,6 +99,21 @@ export class CompareArtistsComponent implements OnInit {
   updateDeezerFansDatas() {
     this.deezerFansDatas = this.artistsLoaded.map((el) => {
       return { name: el.name, value: el.deezerFans};
+    });
+  }
+
+  updateSunburstData() {
+    this.sunburstData = this.artistsLoaded.map((el) => {
+      const children = [];
+
+      el.albums.forEach((album) => {
+        children.push({ name: album.title, value: album.songsCount });
+      });
+
+      return {
+        name: el.name,
+        children
+      };
     });
   }
 

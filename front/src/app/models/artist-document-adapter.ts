@@ -10,11 +10,15 @@ export class ArtistDocumentAdapter {
 
   readonly color: string;
 
+  locationString: string;
+
   constructor(raw: RawArtistDocumentResponse) {
     this.rawArtistDocumentresponse = raw;
     this.color = this.getRandomColor();
 
     this.initAlbumsCovers();
+
+    this.locationString = this.rawArtistDocumentresponse.locationInfo.reverse().join(', ');
   }
 
   initAlbumsCovers() {
@@ -79,10 +83,6 @@ export class ArtistDocumentAdapter {
     const endYear = lifeSpan.end.split('-')[0];
 
     return parseInt(endYear, 10) - parseInt(beginYear, 10);
-  }
-
-  get locationString(): string {
-    return this.rawArtistDocumentresponse.locationInfo.reverse().join(', ');
   }
 
   get birthdate(): string {
