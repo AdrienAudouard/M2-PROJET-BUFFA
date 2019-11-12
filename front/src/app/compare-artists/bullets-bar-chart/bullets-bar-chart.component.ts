@@ -69,23 +69,24 @@ export class BulletsBarChartComponent implements OnInit {
     cursor.lineY.disabled = true;
     cursor.behavior = 'none';
 
-    const bullet = columnTemplate.createChild(am4charts.CircleBullet);
-    bullet.circle.radius = 30;
-    bullet.valign = 'middle';
-    bullet.align = 'left';
-    bullet.isMeasured = true;
-    bullet.interactionsEnabled = false;
-    bullet.horizontalCenter = 'right';
-    bullet.interactionsEnabled = false;
+    const bulletTemplate = columnTemplate.createChild(am4charts.CircleBullet);
+    bulletTemplate.circle.radius = 30;
+    bulletTemplate.valign = 'middle';
+    bulletTemplate.align = 'left';
+    bulletTemplate.isMeasured = true;
+    bulletTemplate.interactionsEnabled = false;
+    bulletTemplate.horizontalCenter = 'right';
+    bulletTemplate.interactionsEnabled = false;
 
-    const hoverState = bullet.states.create('hover');
-    const outlineCircle = bullet.createChild(am4core.Circle);
+    const hoverState = bulletTemplate.states.create('hover');
+    const outlineCircle = bulletTemplate.createChild(am4core.Circle);
     outlineCircle.adapter.add('radius', (radius, target) => {
       const circleBullet = target.parent;
-      return circleBullet.circle.pixelRadius + 10;
+      // tslint:disable-next-line:no-string-literal
+      return circleBullet['circle'].pixelRadius + 10;
     });
 
-    const image = bullet.createChild(am4core.Image);
+    const image = bulletTemplate.createChild(am4core.Image);
     image.width = 60;
     image.height = 60;
     image.horizontalCenter = 'middle';
@@ -94,24 +95,28 @@ export class BulletsBarChartComponent implements OnInit {
 
     image.adapter.add('mask', (mask, target) => {
       const circleBullet = target.parent;
-      return circleBullet.circle;
+      // tslint:disable-next-line:no-string-literal
+      return circleBullet['circle'];
     });
 
     let previousBullet;
     chart.cursor.events.on('cursorpositionchanged',  (event) => {
-      let dataItem = series.tooltipDataItem;
+      const dataItem = series.tooltipDataItem;
 
-      if (dataItem.column) {
-        const bullet = dataItem.column.children.getIndex(1);
+      // tslint:disable-next-line:no-string-literal
+      if (dataItem['column']) {
+        // tslint:disable-next-line:no-string-literal
+        const bullet = dataItem['column'].children.getIndex(1);
 
-        if (previousBullet && previousBullet != bullet) {
+        if (previousBullet && previousBullet !== bullet) {
           previousBullet.isHover = false;
         }
 
-        if (previousBullet != bullet) {
+        if (previousBullet !== bullet) {
 
           const hs = bullet.states.getKey('hover');
-          hs.properties.dx = dataItem.column.pixelWidth;
+          // tslint:disable-next-line:no-string-literal
+          hs.properties.dx = dataItem['column'].pixelWidth;
           bullet.isHover = true;
 
           previousBullet = bullet;
