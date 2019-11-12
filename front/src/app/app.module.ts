@@ -15,6 +15,7 @@ import {NavbarComponent} from './components/navbar/navbar.component';
 import {TopArtistsComponent} from './components/top-artists/top-artists.component';
 import {ArtistDetailsComponent} from './components/artist-details/artist-details.component';
 import { FooterComponent } from './components/footer/footer.component';
+import {StatisticPageModule} from './statistic-page/statistic-page.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FooterComponent } from './components/footer/footer.component';
     NgxChartsModule,
     BrowserAnimationsModule,
     CompareArtistsModule,
+    StatisticPageModule,
     SharedModule,
   ],
   providers: [],

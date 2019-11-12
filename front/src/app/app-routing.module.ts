@@ -5,9 +5,11 @@ import {HomeComponent} from './components/home/home.component';
 import {TopArtistsComponent} from './components/top-artists/top-artists.component';
 import {TopAlbumResolver} from './resolver/top-album-resolver';
 import {CompareArtistsComponent} from './compare-artists/compare-artists/compare-artists.component';
+import {StatisticPageComponent} from './statistic-page/statistic-page/statistic-page.component';
 
 const routes: Routes = [
   { path: 'artist/:name', component: ArtistDetailsComponent },
+  { path: 'statistic-page', component: StatisticPageComponent },
   { path: 'top-artists',
     component: TopArtistsComponent,
     resolve: {
