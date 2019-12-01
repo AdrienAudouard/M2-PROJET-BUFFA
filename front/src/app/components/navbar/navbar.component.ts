@@ -12,6 +12,7 @@ export class NavbarComponent {
     { name: 'Home', path: '/home'},
     { name: 'Top artists', path: '/top-artists'},
     { name: 'Compare two artists', path: '/compare-artists'},
+    { name: 'API Stats', path: '/statistic-page'},
   ];
 
   constructor(
