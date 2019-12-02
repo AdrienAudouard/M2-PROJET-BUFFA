@@ -11,6 +11,9 @@ export class AlbumAdapter {
   get title(): string {
     return this.rawAlbum.title;
   }
+  get id(): string {
+    return this.rawAlbum._id;
+  }
 
   image(size: ImageSize): string {
     return this.rawAlbum.cover[size];

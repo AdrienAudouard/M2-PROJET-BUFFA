@@ -1,6 +1,6 @@
 .navbar.navbar-expand-lg.navbar-light.bg-light{
   position:fixed;
-  z-index: 1;
+  z-index: 9999;
   width:100%;
   height: 56px!important;
   padding-top:0!important;
@@ -19,10 +19,15 @@
   padding-right: 12px;
   padding-left: 12px;
   padding-top: 8px;
+  z-index: 1;
 }
-.nav-item:hover{
+.nav-item:hover {
   background-color: black!important;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 700ms;
 }
 .nav-item .nav-link:hover{
   color: #f8f9fa!important;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 700ms;
 }

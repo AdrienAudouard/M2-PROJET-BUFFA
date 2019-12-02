@@ -9,4 +9,5 @@ export interface RawAlbum {
   cover: RawPicture;
   dateRelease: string;
   songs: RawSong[];
+  _id: string;
 }
