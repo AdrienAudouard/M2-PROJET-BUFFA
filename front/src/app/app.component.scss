@@ -1,1 +1,12 @@
+app-navbar {
+/*  position:fixed;
+  z-index: 9999;*/
+  width:100%;
+  height: 56px!important;
+  padding-top:0!important;
+  padding-bottom: 0!important;
+}
 
+router-outlet {
+  margin-top: 56px;
+}

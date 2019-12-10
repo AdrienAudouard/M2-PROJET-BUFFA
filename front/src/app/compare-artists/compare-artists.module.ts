@@ -5,7 +5,6 @@ import { SearchCardComponent } from './search-card/search-card.component';
 import {SharedModule} from '../shared/shared.module';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
-import { CardComponent } from './card/card.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { DeezerFansChartComponent } from './deezer-fans-chart/deezer-fans-chart.component';
 import { BulletsBarChartComponent } from './bullets-bar-chart/bullets-bar-chart.component';
@@ -15,7 +14,6 @@ import { SunburstChartComponent } from './sunburst-chart/sunburst-chart.componen
   declarations: [
     CompareArtistsComponent,
     SearchCardComponent,
-    CardComponent,
     TimelineComponent,
     DeezerFansChartComponent,
     BulletsBarChartComponent,
