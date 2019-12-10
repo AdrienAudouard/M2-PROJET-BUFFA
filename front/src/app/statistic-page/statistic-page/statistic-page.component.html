@@ -1,5 +1,19 @@
-<h1 class="text-center">API Stats</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center">API Stats</h1>
+    </div>
+  </div>
 
-<app-column-chart [data]="socialNetworkData">
+  <app-card title="Most links presents in the API">
+    <app-column-chart [data]="socialNetworkData">
 
-</app-column-chart>
+    </app-column-chart>
+  </app-card>
+
+  <app-card title="Number of documents">
+    <app-stacked-bar-chart [data]="totalCountData">
+
+    </app-stacked-bar-chart>
+  </app-card>
+</div>

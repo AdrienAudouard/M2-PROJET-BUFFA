@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {RawArtistStats} from '../../models/raw-artist-stats';
-import {ArtistStatsAdapter} from '../../models/artist-stats-adapter';
+import {forkJoin, Observable} from 'rxjs';
+import {RawStats} from '../../models/raw-stats';
+import {StatsAdapter} from '../../models/stats-adapter';
 import {map} from 'rxjs/operators';
 
 @Injectable({
@@ -13,7 +13,13 @@ export class StatsService {
 
   constructor(private http: HttpClient) { }
 
-  getStats(): Observable<ArtistStatsAdapter> {
-    return this.http.get<[RawArtistStats]>(environment.api + '/api/v1/_stats/artist/count').pipe(map((r) => new ArtistStatsAdapter(r)));
+  getStats(): Observable<StatsAdapter> {
+    return forkJoin(
+      this.http.get<[RawStats]>(environment.api + '/api/v1/_stats/artist/count'),
+      this.http.get<[RawStats]>(environment.api + '/api/v1/_stats/album/count'),
+      this.http.get<[RawStats]>(environment.api + '/api/v1/_stats/song/count')
+    ).pipe(
+      map(([artist, album, song]) => new StatsAdapter(artist, album, song))
+    );
   }
 }

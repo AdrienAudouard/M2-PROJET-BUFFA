@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: 'https://wasabi.i3s.unice.fr'
+  api: 'https://m2-projet-buffa.herokuapp.com/api'
 };

@@ -5,6 +5,6 @@ export enum Stats {
   DEEZER = 'urlDeezer',
   AMAZON = 'urlAmazon',
   ITUNES = 'urlITunes',
-  SPOTIFY = 'urlSpotify'
-
+  SPOTIFY = 'urlSpotify',
+  TOTAL_COUNT = '_id'
 }
