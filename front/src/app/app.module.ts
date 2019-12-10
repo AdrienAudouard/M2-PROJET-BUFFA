@@ -17,6 +17,7 @@ import {ArtistDetailsComponent} from './components/artist-details/artist-details
 import { FooterComponent } from './components/footer/footer.component';
 import {StatisticPageModule} from './statistic-page/statistic-page.module';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import { ImgArtistComponent } from './components/artist-details/img-artist/img-artist.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {NgxSpinnerModule} from 'ngx-spinner';
     NavbarComponent,
     TopArtistsComponent,
     FooterComponent,
+    ImgArtistComponent,
   ],
   imports: [
     BrowserModule,
