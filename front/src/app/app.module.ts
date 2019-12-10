@@ -16,6 +16,8 @@ import {TopArtistsComponent} from './components/top-artists/top-artists.componen
 import {ArtistDetailsComponent} from './components/artist-details/artist-details.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {StatisticPageModule} from './statistic-page/statistic-page.module';
+import { ImgArtistComponent } from './components/artist-details/img-artist/img-artist.component';
+import { NgxAudioPlayerModule } from 'ngx-audio-player';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import {StatisticPageModule} from './statistic-page/statistic-page.module';
     NavbarComponent,
     TopArtistsComponent,
     FooterComponent,
+    ImgArtistComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import {StatisticPageModule} from './statistic-page/statistic-page.module';
     CompareArtistsModule,
     StatisticPageModule,
     SharedModule,
+    NgxAudioPlayerModule
   ],
   providers: [],
   exports: [],

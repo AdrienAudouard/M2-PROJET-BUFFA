@@ -2,10 +2,7 @@
     <div>
         <div>
             <!-- Slide Img -->
-            <div class="div-img-artist">
-                <img alt="Artist's picture" id="img_artist" [src]="artistData.image(imageSize.MEDIUM)">
-                <!--src="{{artistData.picture.medium}}"-->
-            </div>
+            <app-img-artist></app-img-artist>
             <!-- Slide Content text -->
             <div class="container">
                 <div class="row">
@@ -71,6 +68,8 @@
                 <tr *ngFor="let song of songData; let i = index">
                   <th>{{i + 1}}</th>
                   <th>{{song.title}}</th>
+                  <th><mat-basic-audio-player [audioUrl]="msbapAudioUrl" [title]="msbapTitle"
+                                              [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player></th>
                 </tr>
                 </tbody>
               </table>
