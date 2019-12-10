@@ -29,6 +29,7 @@
     "@ng-bootstrap/ng-bootstrap": "^5.1.1",
     "@swimlane/ngx-charts": "^12.0.1",
     "ngx-skeleton-loader": "^1.2.2",
+    "ngx-spinner": "^8.0.3",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

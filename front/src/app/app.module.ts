@@ -16,6 +16,7 @@ import {TopArtistsComponent} from './components/top-artists/top-artists.componen
 import {ArtistDetailsComponent} from './components/artist-details/artist-details.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {StatisticPageModule} from './statistic-page/statistic-page.module';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {StatisticPageModule} from './statistic-page/statistic-page.module';
     BrowserAnimationsModule,
     CompareArtistsModule,
     StatisticPageModule,
+    NgxSpinnerModule,
     SharedModule,
   ],
   providers: [],

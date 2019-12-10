@@ -6,6 +6,7 @@ import {DateTimeService} from '../../shared/services/date-time.service';
 import {AlbumAdapter} from '../../models/album-adapter';
 import {BulletBarChartData} from '../bullets-bar-chart/model/bullet-bar-chart-data';
 import {SunburstData} from '../sunburst-chart/models/sunburst-data';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-compare-artists',
@@ -22,17 +23,16 @@ export class CompareArtistsComponent implements OnInit {
   barChartData: BulletBarChartData[] = [];
   sunburstData: SunburstData[] = [];
 
-  constructor(private _dtService: DateTimeService) {
+  constructor(private _dtService: DateTimeService,
+              public spinnerService: NgxSpinnerService) {
     this.view = [innerWidth / 2, 200];
   }
 
   ngOnInit() {
-
   }
 
   addAddCard() {
     this.cardCount.push({ artist: null });
-    console.log(this.cardCount);
   }
 
   onArtistDeleted(artist: ArtistDocumentAdapter) {
