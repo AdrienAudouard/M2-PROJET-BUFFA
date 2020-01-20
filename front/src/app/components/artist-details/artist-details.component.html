@@ -2,15 +2,12 @@
     <div>
         <div>
             <!-- Slide Img -->
-            <app-img-artist></app-img-artist>
             <!-- Slide Content text -->
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="hero-slides-content text-center">
-                            <h2> Colorlib Music
-                                <span>{{artistData.name}}</span></h2>
-                            <a href="#" class="btn-discover">Discover</a>
+                            <h1><span>{{artistData.name}}</span></h1>
                         </div>
                     </div>
                 </div>
@@ -68,8 +65,14 @@
                 <tr *ngFor="let song of songData; let i = index">
                   <th>{{i + 1}}</th>
                   <th>{{song.title}}</th>
-                  <th><mat-basic-audio-player [audioUrl]="msbapAudioUrl" [title]="msbapTitle"
-                                              [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player></th>
+                  <th>
+                    <!--<mat-basic-audio-player [audioUrl]="msbapAudioUrl"
+                                              [title]="msbapTitle"
+                                              [displayTitle]="msbapDisplayTitle"
+                                              [displayVolumeControls]="true">
+
+                  </mat-basic-audio-player>-->
+                  </th>
                 </tr>
                 </tbody>
               </table>

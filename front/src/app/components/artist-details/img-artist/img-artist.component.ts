@@ -1,4 +1,5 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit} from '@angular/core';
+import * as Enum from '../../../models/enums/image-size';
 
 @Component({
   selector: 'app-img-artist',
@@ -6,6 +7,10 @@ import {Component, ElementRef, OnInit} from '@angular/core';
   styleUrls: ['./img-artist.component.scss']
 })
 export class ImgArtistComponent implements OnInit {
+  imageSize = Enum.ImageSize;
+
+  @Input()
+  artistData: any;
 
   constructor(private readonly element: ElementRef) { }
   ngOnInit() {
