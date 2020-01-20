@@ -14,7 +14,7 @@ export class ImgArtistComponent implements OnInit {
   imageSize = Enum.ImageSize;
   artistData: ArtistDocumentAdapter;
 
-  constructor(private readonly element: ElementRef,private route: ActivatedRoute, private artisteService: ArtisteService) { }
+  constructor(private readonly element: ElementRef, private route: ActivatedRoute, private artisteService: ArtisteService) { }
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.name = params['name'];
@@ -27,7 +27,6 @@ export class ImgArtistComponent implements OnInit {
     });
   }
   getMainColorOfImg() {
-
     const imgSection = document.getElementById('artist-area');
     const canvas = document.createElement('canvas');
     canvas.width = this.element.nativeElement.offSetWidth;

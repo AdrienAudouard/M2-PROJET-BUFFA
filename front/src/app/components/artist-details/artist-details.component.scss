@@ -6,8 +6,59 @@
   border: 1px solid #d8d8d8;
   background-color: #f5f9fa;
 }
-.latest-albums-area{
+.latest-albums-area {
   background: white;
+}
+.artist-area{
+  //background-image: url('./../../../assets/background-artist.jpg');
+  -webkit-animation: slide 12s linear infinite;
+  animation: slide 12s linear infinite;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 0;
+}
+#img_artist {
+  border-radius: 100%;
+  border: 1px solid white ;
+}
+.div-img-artist{
+  text-align: center;
+  padding-top: 50px;
+}
+.btn-discover {
+  position: relative;
+  display: inline-block;
+  min-width: 212px;
+  color: rgb(255, 255, 255);
+  border: 1px solid white;
+  padding: 0 30px;
+  font-size: 16px;
+  line-height: 47px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin: 50px 0 50px 0;
+  text-decoration: none;
+  &:hover {
+    -webkit-transition-duration: 500ms;
+    transition-duration: 700ms;
+    background-color: white;
+    color: black;    }
+}
+
+.hero-slides-content {
+  margin-top: 40px;
+}
+
+.latest-albums-area {
+  margin-top: 40px;
+}
+
+.hero-slides-content.text-center h2{
+  color: #000;
+}
+.section-heading.style-2 h2 {
+  font-size: 25px;
 }
 .section-heading h2 {
   font-size: 18px;

@@ -9,6 +9,7 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { DeezerFansChartComponent } from './deezer-fans-chart/deezer-fans-chart.component';
 import { BulletsBarChartComponent } from './bullets-bar-chart/bullets-bar-chart.component';
 import { SunburstChartComponent } from './sunburst-chart/sunburst-chart.component';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -19,11 +20,12 @@ import { SunburstChartComponent } from './sunburst-chart/sunburst-chart.componen
     BulletsBarChartComponent,
     SunburstChartComponent
   ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    FontAwesomeModule,
-    NgxChartsModule
-  ]
+    imports: [
+        CommonModule,
+        SharedModule,
+        FontAwesomeModule,
+        NgxChartsModule,
+        NgxSpinnerModule
+    ]
 })
 export class CompareArtistsModule { }

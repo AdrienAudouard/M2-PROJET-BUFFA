@@ -29,3 +29,13 @@
   border-bottom: 2px solid black!important;
 }
 
+.nav-item:hover {
+  background-color: black!important;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 700ms;
+}
+.nav-item .nav-link:hover{
+  color: #f8f9fa!important;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 700ms;
+}

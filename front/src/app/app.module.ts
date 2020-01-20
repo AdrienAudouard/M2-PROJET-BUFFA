@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {CompareArtistsModule} from './compare-artists/compare-artists.module';
@@ -16,6 +15,7 @@ import {TopArtistsComponent} from './components/top-artists/top-artists.componen
 import {ArtistDetailsComponent} from './components/artist-details/artist-details.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {StatisticPageModule} from './statistic-page/statistic-page.module';
+import {NgxSpinnerModule} from 'ngx-spinner';
 import { ImgArtistComponent } from './components/artist-details/img-artist/img-artist.component';
 import { NgxAudioPlayerModule } from 'ngx-audio-player';
 import { AudioPlayerComponent } from './components/audio-player/audio-player.component';
@@ -41,6 +41,7 @@ import { AudioPlayerComponent } from './components/audio-player/audio-player.com
     BrowserAnimationsModule,
     CompareArtistsModule,
     StatisticPageModule,
+    NgxSpinnerModule,
     SharedModule,
     NgxAudioPlayerModule,
   ],

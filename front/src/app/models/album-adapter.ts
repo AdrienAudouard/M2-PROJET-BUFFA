@@ -24,7 +24,6 @@ export class AlbumAdapter {
   }
 
   get releaseDate(): string {
-    console.log(this.rawAlbum);
     const date = this.rawAlbum.dateRelease;
 
     if (date.length === 4) {

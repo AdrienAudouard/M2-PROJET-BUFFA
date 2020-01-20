@@ -1,4 +1,9 @@
 <div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center">Artists comparator</h1>
+    </div>
+  </div>
   <div class="row ml-3 mr-3 mb-3">
     <div class="card col-12">
       <div class="card-body">
@@ -11,6 +16,8 @@
             <div class="col-4" *ngFor="let i of cardCount; let index = index">
               <app-search-card (onArtistDeleted)="onArtistDeleted($event)"
                                (onArtistLoaded)="onNewArtistLoaded($event, index)"
+                               (onLoadStart)="spinnerService.show()"
+                               (onLoadStop)="spinnerService.hide()"
                                [artist]="i.artist"
                                [title]="'Artiste ' + (index + 1)" >
 
@@ -58,3 +65,14 @@
 
   <p *ngIf="!hasDatas" class="text-center">Please select at least one artist !</p>
 </div>
+
+<ngx-spinner
+  bdOpacity = 0.9
+  bdColor = "rgba(51,51,51,0.57)"
+  size = "medium"
+  color = "#fff"
+  type = "ball-atom"
+  [fullScreen] = "true"
+>
+  <p style="color: white" > Loading... </p>
+</ngx-spinner>

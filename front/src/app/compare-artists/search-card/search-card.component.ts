@@ -15,12 +15,23 @@ export class SearchCardComponent implements OnInit {
   faTrashAlt = faTrashAlt;
   imageSize = Enum.ImageSize;
 
-  @Input() artist: ArtistDocumentAdapter = null;
+  @Input()
+  artist: ArtistDocumentAdapter = null;
 
-  @Input() title: string;
+  @Input()
+  title: string;
 
-  @Output() onArtistLoaded = new EventEmitter<ArtistDocumentAdapter>();
-  @Output() onArtistDeleted = new EventEmitter<ArtistDocumentAdapter>();
+  @Output()
+  onArtistLoaded = new EventEmitter<ArtistDocumentAdapter>();
+
+  @Output()
+  onArtistDeleted = new EventEmitter<ArtistDocumentAdapter>();
+
+  @Output()
+  onLoadStart = new EventEmitter();
+
+  @Output()
+  onLoadStop = new EventEmitter();
 
   constructor(private _artisteService: ArtisteService) { }
 
@@ -32,9 +43,11 @@ export class SearchCardComponent implements OnInit {
   }
 
   onArtistSelected(name: RawSearchResponse) {
+    this.onLoadStart.emit();
     this._artisteService.getArtistDocument(name.name).subscribe((response) => {
       this.artist = response;
       this.onArtistLoaded.emit(response);
+      this.onLoadStop.emit();
     });
   }
 
