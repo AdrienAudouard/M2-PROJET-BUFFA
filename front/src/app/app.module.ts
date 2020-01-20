@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import {StatisticPageModule} from './statistic-page/statistic-page.module';
 import { ImgArtistComponent } from './components/artist-details/img-artist/img-artist.component';
 import { NgxAudioPlayerModule } from 'ngx-audio-player';
+import { AudioPlayerComponent } from './components/audio-player/audio-player.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NgxAudioPlayerModule } from 'ngx-audio-player';
     TopArtistsComponent,
     FooterComponent,
     ImgArtistComponent,
+    AudioPlayerComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,7 @@ import { NgxAudioPlayerModule } from 'ngx-audio-player';
     CompareArtistsModule,
     StatisticPageModule,
     SharedModule,
-    NgxAudioPlayerModule
+    NgxAudioPlayerModule,
   ],
   providers: [],
   exports: [],

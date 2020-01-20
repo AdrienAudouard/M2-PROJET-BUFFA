@@ -1,3 +1,22 @@
-<div class="div-img-artist">
-  <img alt="Artist's picture" id="img_artist" [src]="artistData.image(imageSize.MEDIUM)">
-</div>
+<section class="artist-area">
+  <div>
+    <div>
+      <!-- Slide Img -->
+      <div class="div-img-artist">
+        <img alt="Artist's picture" id="imgArtist" [src]="artistData.image(imageSize.MEDIUM)">
+      </div>
+      <!-- Slide Content text -->
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="hero-slides-content text-center">
+              <h2>
+                <span>{{artistData.name}}</span></h2>
+              <a href="#" class="btn-discover">Discover</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

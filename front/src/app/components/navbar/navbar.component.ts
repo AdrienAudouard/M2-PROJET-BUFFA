@@ -15,9 +15,7 @@ export class NavbarComponent {
     { name: 'API Stats', path: '/statistic-page'},
   ];
 
-  constructor(
-    private _router: Router,
-  ) {
+  constructor(private _router: Router, private playerService:   ) {
   }
 
   onSelectedItem(item: RawSearchResponse) {

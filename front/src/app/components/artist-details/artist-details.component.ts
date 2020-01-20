@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArtisteService } from '../../shared/services/artiste.service';
 import { ArtistDocumentAdapter } from '../../models/artist-document-adapter';
@@ -14,18 +14,11 @@ import * as Enum from '../../models/enums/image-size';
 export class ArtistDetailsComponent implements OnInit {
     name = '';
     artistDataSong: ArtistDocumentAdapter;
+    artistData: ArtistDocumentAdapter;
     imageSize = Enum.ImageSize;
     headElements = ['#', 'Titre', 'Lecture'];
     songData = [];
     show = false;
-
-    msbapTitle = 'Audio Title';
-    msbapAudioUrl = 'Link to audio URL';
-    msaapDisplayVolumeControls = true;
-    msbapDisplayTitle = false;
-
-  @Input()
-    artistData: ArtistDocumentAdapter;
 
     constructor(private route: ActivatedRoute, private artisteService: ArtisteService) { }
     ngOnInit() {

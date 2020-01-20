@@ -1,81 +1,62 @@
-<section class="artist-area">
-    <div>
-        <div>
-            <!-- Slide Img -->
-            <app-img-artist></app-img-artist>
-            <!-- Slide Content text -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="hero-slides-content text-center">
-                            <h2> Colorlib Music
-                                <span>{{artistData.name}}</span></h2>
-                            <a href="#" class="btn-discover">Discover</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="latest-albums-area section-padding-100">
+<section class="section-artist-detail">
+  <app-img-artist></app-img-artist>
+  <section class="latest-albums-area">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-heading style-2">
-                    <h2>Latest Albums</h2>
-                </div>
-            </div>
+      <div class="row tab-heading">
+        <div class="cell cell-title">
+          <h2 class="heading-2">Albums</h2>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="albums-slideshow owl-carousel owl-loaded owl-drag">
-                    <div class="owl-stage-outer">
-                        <div class="page-album">
-                            <div class="list-album">
-                                <div class="single-album">
-                                    <div class="album-info"  *ngFor="let key of artistData.albums">
-                                        <img class="img-album" alt="" [src]="key.image(imageSize.MEDIUM)" (click)="displaySongsOfAlbums($event)" id="{{key.title}}" > <!-- src="{{albumData[key].cover.medium}}"-->
-                                           <div class="thumbnail-caption">
-                                              <div class="heading" >
-                                                <a title="{{key.title}}">{{key.title}}</a>
-                                              </div>
-                                           </div>
-                                    </div>
-                                </div>
-                            </div>
+        <div class="cell cell-line">
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="albums-slideshow owl-carousel owl-loaded owl-drag">
+            <div class="owl-stage-outer">
+              <div class="page-album">
+                <div class="list-album">
+                  <div class="single-album">
+                    <div class="album-info"  *ngFor="let key of artistData.albums">
+                      <img class="img-album" alt="" [src]="key.image(imageSize.MEDIUM)" (click)="displaySongsOfAlbums($event)" id="{{key.title}}" > <!-- src="{{albumData[key].cover.medium}}"-->
+                      <div class="thumbnail-caption">
+                        <div class="heading" >
+                          <a title="{{key.title}}">{{key.title}}</a>
                         </div>
+                      </div>
                     </div>
-                    <div class="owl-nav">
-                        <div class="owl-prev"><i class="fa fa-angle-double-left"></i></div>
-                        <div class="owl-next"><i class="fa fa-angle-double-right"></i></div>
-                    </div>
-                    <div class="owl-dots disabled"></div>
+                  </div>
                 </div>
+              </div>
             </div>
+            <div class="owl-nav">
+              <div class="owl-prev"><i class="fa fa-angle-double-left"></i></div>
+              <div class="owl-next"><i class="fa fa-angle-double-right"></i></div>
+            </div>
+            <div class="owl-dots disabled"></div>
+          </div>
         </div>
-        <div class="row" *ngIf="show">
-          <div class="col-12">
-            <div class="datagrid">
-              <table class="table">
-                <thead>
-                <tr>
-                  <th *ngFor="let head of headElements" scope="col">{{head}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr *ngFor="let song of songData; let i = index">
-                  <th>{{i + 1}}</th>
-                  <th>{{song.title}}</th>
-                  <th><mat-basic-audio-player [audioUrl]="msbapAudioUrl" [title]="msbapTitle"
-                                              [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="true"></mat-basic-audio-player></th>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-         </div>
+      </div>
+      <div class="row" *ngIf="show">
+        <div class="col-12">
+          <div class="datagrid">
+            <table class="table tableSong">
+              <thead>
+              <tr>
+                <th class="tableSong-heading" *ngFor="let head of headElements" scope="col">{{head}}</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let song of songData; let i = index">
+                <th>{{i + 1}}</th>
+                <th>{{song.title}}</th>
+                <th></th>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 </section>
-
